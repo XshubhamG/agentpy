@@ -66,11 +66,12 @@ The `Agent` class is the primary interface for managing interactions.
 #### Configuration
 - `system_prompt`: The base instruction set for the model.
 - `model`: The name of the model hosted on Ollama.
-- `baseUrl`: The endpoint for the Ollama API (defaults to `http://localhost:11434`).
+- `base_url`: The endpoint for the Ollama API (defaults to `http://localhost:11434`).
 - `api_key`: Optional authentication token for proxied setups.
 
 #### Methods
 - `@context`: A decorator used to register functions that return string data to be included in the system prompt.
+- `@tool`: A decorator used to register functions as tools that the model can call.
 - `chat(user_message: str) -> str`: Sends a message to the model along with all active contexts and returns the response.
 
 ## Development
@@ -78,7 +79,7 @@ The `Agent` class is the primary interface for managing interactions.
 To run the main interactive loop:
 
 ```bash
-uv run main.py
+uv run agentpy
 ```
 
 ## License
